@@ -66,4 +66,21 @@ public class Network
 
         visited[current] = true;
 
-        foreach (int neighbor in
+        foreach (int neighbor in connections[current])
+        {
+            if (!visited[neighbor])
+            {
+                int result = SearchLevel(neighbor, target, visited, level + 1);
+                if (result != -1)
+                    return result;
+            }
+        }
+        return -1;
+    }
+
+    public void Validate(int num)
+    {
+        if (num < 0 || num >= size)
+            throw new ArgumentException("Elemento inválido");
+    }
+}
