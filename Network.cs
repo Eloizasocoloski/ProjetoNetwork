@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Network
 {
-    private readonly int _TotalElements = 0;
+
     private Dictionary<int, List<int>> connections;
     private int size;
 
